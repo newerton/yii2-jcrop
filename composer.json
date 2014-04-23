@@ -1,0 +1,18 @@
+{
+    "name": "newerton/yii2-jcrop",
+    "description": "Jcrop is the quick and easy way to add image cropping functionality to your web application.",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "extension", "jquery", "jcrop"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Newerton Vargas de Araújo",
+            "email": "newerton.araujo@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "newerton\\jcrop\\": ""
+        }
+    }
+}
