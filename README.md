@@ -12,13 +12,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist newerton/yii2-jcrop "*"
+php composer.phar require --prefer-dist newerton/yii2-jcrop "dev-master"
 ```
 
 or add
 
 ```
-"newerton/yii2-jcrop": "*"
+"newerton/yii2-jcrop": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
