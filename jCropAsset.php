@@ -16,6 +16,9 @@ class jCropAsset extends AssetBundle
         'js/jquery.color.js',
         'js/ejcrop.js'
     ];
+    public $depends = [
+        'yii\web\JqueryAsset',
+    ];
     
      public function registerAssetFiles($view) {
         $this->css[] = 'css/jquery.Jcrop' . (!YII_DEBUG ? '.min' : '') . '.css';
