@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (c) 2014 Newerton Vargas de Araújo
+ * @copyright Copyright (c) 2014 Newerton Vargas de Araï¿½jo
  * @link http://newerton.com.br
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package yii2-jcrop
@@ -19,7 +19,7 @@ use yii\web\JsExpression;
  * Select a cropping area fro an image using the Jcrop jQuery tool and crop
  * it using PHP's GD functions.
  *
- * @author Newerton Vargas de Araújo <contato@newerton.com.br>
+ * @author Newerton Vargas de Araï¿½jo <contato@newerton.com.br>
  * @since 1.0
  */
 class jCrop extends Widget {
@@ -82,12 +82,12 @@ class jCrop extends Widget {
             $output .= '</div>';
         }
 
-        $output .= Html::hiddenInput($this->id . '_x', 0, ['class' => 'coords']);
-        $output .= Html::hiddenInput($this->id . '_y', 0, ['class' => 'coords']);
-        $output .= Html::hiddenInput($this->id . '_w', 0, ['class' => 'coords']);
-        $output .= Html::hiddenInput($this->id . '_h', 0, ['class' => 'coords']);
-        $output .= Html::hiddenInput($this->id . '_x2', 0, ['class' => 'coords']);
-        $output .= Html::hiddenInput($this->id . '_y2', 0, ['class' => 'coords']);
+        $output .= Html::hiddenInput($this->id . '_x', 0, ['class' => 'coords', 'id' => $this->id . '_x']);
+        $output .= Html::hiddenInput($this->id . '_y', 0, ['class' => 'coords', 'id' => $this->id . '_y']);
+        $output .= Html::hiddenInput($this->id . '_w', 0, ['class' => 'coords', 'id' => $this->id . '_w']);
+        $output .= Html::hiddenInput($this->id . '_h', 0, ['class' => 'coords', 'id' => $this->id . '_h']);
+        $output .= Html::hiddenInput($this->id . '_x2', 0, ['class' => 'coords', 'id' => $this->id . '_x2']);
+        $output .= Html::hiddenInput($this->id . '_y2', 0, ['class' => 'coords', 'id' => $this->id . '_y2']);
 
         echo $output;
 
