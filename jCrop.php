@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (c) 2014 Newerton Vargas de Ara�jo
+ * @copyright Copyright (c) 2014 Newerton Vargas de Araujo
  * @link http://newerton.com.br
  * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @package yii2-jcrop
@@ -19,7 +19,7 @@ use yii\web\JsExpression;
  * Select a cropping area fro an image using the Jcrop jQuery tool and crop
  * it using PHP's GD functions.
  *
- * @author Newerton Vargas de Ara�jo <contato@newerton.com.br>
+ * @author Newerton Vargas de Araujo <contato@newerton.com.br>
  * @since 1.0
  */
 class jCrop extends Widget {
