@@ -76,9 +76,9 @@ class jCrop extends Widget {
 
         if (!empty($this->buttons)) {
             $output .= "<div class='jcrop-buttons' id='{$this->id}_buttons'>";
-            $output .= Html::buttonInput($this->buttons['start']['label'], $this->getHtmlOptions('start', 'inline'));
-            $output .= Html::buttonInput($this->buttons['crop']['label'], $this->getHtmlOptions('crop'));
-            $output .= Html::buttonInput($this->buttons['cancel']['label'], $this->getHtmlOptions('cancel'));
+            $output .= Html::button($this->buttons['start']['label'], $this->getHtmlOptions('start', 'inline'));
+            $output .= Html::button($this->buttons['crop']['label'], $this->getHtmlOptions('crop'));
+            $output .= Html::button($this->buttons['cancel']['label'], $this->getHtmlOptions('cancel'));
             $output .= '</div>';
         }
 
