@@ -52,7 +52,12 @@ class jCrop extends Widget {
     /**
      * @var array Extra parameters to send with the AJAX request.
      */
-    public $ajaxParams = [];
+    public $ajaxParams = [];    
+	
+    /**
+     * @var sttring Name of JS function to init Jcrop with buttons
+     */
+    public $initFunction = "ejcrop_initWithButtons";
 
     /**
      * @inheritdoc
@@ -76,10 +81,11 @@ class jCrop extends Widget {
 
         if (!empty($this->buttons)) {
             $output .= "<div class='jcrop-buttons' id='{$this->id}_buttons'>";
-            $output .= Html::button($this->buttons['start']['label'], $this->getHtmlOptions('start', 'inline'));
-            $output .= Html::button($this->buttons['crop']['label'], $this->getHtmlOptions('crop'));
-            $output .= Html::button($this->buttons['cancel']['label'], $this->getHtmlOptions('cancel'));
-            $output .= '</div>';
+             foreach ($this->buttons as $key => $value) {
+                $display = isset($value['display']) ? $value['display'] : 'none';
+                $output .= Html::button($value['label'], $this->getHtmlOptions($key, $display));
+            }
+			$output .= '</div>';
         }
 
         $output .= Html::hiddenInput($this->id . '_x', 0, ['class' => 'coords', 'id' => $this->id . '_x']);
@@ -109,7 +115,7 @@ class jCrop extends Widget {
         $options = !empty($this->jsOptions) ? Json::encode($this->jsOptions) : '';
 
         if (!empty($this->buttons)) {
-            $js = "ejcrop_initWithButtons('{$this->id}', {$options});";
+            $js = "$this->initFunction('{$this->id}', {$options});";
         } else {
             $js = "jQuery('#{$this->id}').Jcrop({$options});";
         }
@@ -124,7 +130,7 @@ class jCrop extends Widget {
      * @param string $name button name
      * @return array HTML options 
      */
-    protected function getHtmlOptions($name, $display = 'none') {
+    protected function getHtmlOptions($name, $display) {
         if (isset($this->buttons[$name]['htmlOptions'])) {
             if (isset($this->buttons[$name]['htmlOptions']['id'])) {
                 throw new InvalidConfigException("'id' for jcrop '{$name}' button may not be set manually.");

@@ -74,3 +74,17 @@ echo \newerton\jcrop\jCrop::widget([
 ]);
 ?>
 ```
+To add some custom button just add element in buttons array. Like this:
+```
+             'square' => [
+                    'label' => '1:1',
+                    'htmlOptions' => [
+                        'class' => 'btn'
+                    ]
+                ],
+```
+You can specify delegated for your custom buttons action in JS after widget or you can create your own jcrop init function ( and set it's name in widget params:
+```
+            'initFunction' => 'ejcrop_init',
+```                
+                
